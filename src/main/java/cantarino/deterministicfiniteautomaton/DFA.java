@@ -9,8 +9,6 @@ public class DFA {
     
     private char[] letras;
     private int[] estadosFinais;
-    private int numLinhas;
-    private int numColunas;
     private int[][] matriz;
     
     public DFA(String caminho){
@@ -44,9 +42,9 @@ public class DFA {
             
             linha = bufferedReader.readLine();
             valores = linha.split(";");
-            this.numLinhas = Integer.parseInt(valores[1]);
-            this.numColunas = Integer.parseInt(valores[2]);
-            this.matriz = new int[this.numLinhas][this.numColunas];
+            int numLinhas = Integer.parseInt(valores[1]);
+            int numColunas = Integer.parseInt(valores[2]);
+            this.matriz = new int[numLinhas][numColunas];
             
             for(int i = 0; i < this.numLinhas; i++){
                 if ((linha = bufferedReader.readLine()) != null) {
