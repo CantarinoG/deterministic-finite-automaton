@@ -73,25 +73,13 @@ public class DFA {
         
     }
     
-    private int indexDaLetra(char letra){
-        
-        for(int i = 0; i < this.letras.length; i++){
-        
-            if(letra == this.letras[i]) return i;
-        
-        }
-        
-        return -1;
-        
-    }
-    
     public boolean testaPalavra(String palavra) {
         
         int estadoAtual = 0;
         
         for(int i = 0; i < palavra.length(); i++){
             
-            int letraAtual = this.indexDaLetra(palavra.charAt(i));
+            int letraAtual = Arrays.binarySearch(this.letras, palavra.charAt(i));
             if(matriz[estadoAtual][letraAtual] == -1) return false;
             estadoAtual = matriz[estadoAtual][letraAtual];
             
