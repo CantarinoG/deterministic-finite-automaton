@@ -46,7 +46,7 @@ public class DFA {
             int numColunas = Integer.parseInt(valores[2]);
             this.matriz = new int[numLinhas][numColunas];
             
-            for(int i = 0; i < this.numLinhas; i++){
+            for(int i = 0; i < numLinhas; i++){
                 if ((linha = bufferedReader.readLine()) != null) {
                     
                     valores = linha.split(";");
